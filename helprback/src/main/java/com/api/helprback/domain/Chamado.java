@@ -1,5 +1,6 @@
 package com.api.helprback.domain;
 
+import com.api.helprback.domain.dtos.ChamadoDTO;
 import com.api.helprback.domain.enums.Prioridade;
 import com.api.helprback.domain.enums.Status;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -44,6 +45,12 @@ public class Chamado implements Serializable {
         this.observacoes = observacoes;
         this.tecnico = tecnico;
         this.cliente = cliente;
+    }
+
+    public Chamado(ChamadoDTO obj) {
+        super();
+        this.titulo = obj.getTitulo();
+        this.observacoes = obj.getObservacoes();
     }
 
     public Integer getId() {
